@@ -24,7 +24,7 @@ impossible to satisfy all the customers, or describe, for each of the Curries, w
 it should be made Vegetarian or Meat.\
 
 The output for the above file should be:\
-V V V V M
+`V V V V M`
 
 ...because all customers can be made happy by every Curry being prepared as
 Veggie except number 5.\
@@ -54,13 +54,13 @@ A slightly richer example is:\
 5 V 4 M
 
 ...which should print:\
-V M V M V
+`V M V M V`
 
 One more example. The input:\
 2\
 1 V 2 M\
 1 M\
 ...should produce\
-M M
+`M M`
 
 
