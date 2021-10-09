@@ -1,18 +1,19 @@
 from helper.file_parse import get_lines, file_check, extract_num_let
 
 
-class OptimalCurry:
+class KitchenOS:
     def __init__(self, file_content):
         all_lines = get_lines(file_content)
         if file_check(all_lines) == "ok":
             self.n_curries = all_lines[0]  # number of curry types
             self.n_customers = len(all_lines) - 1
             self.full_pref = all_lines[1:]  # raw preferences of the input files
+            self.is_meat_asked = False
+            self.is_veggie_asked = False
             self.veggie_only, self.meat_only = self.recursive_parser(self.full_pref)
-            self.optimal_sequence = OptimalCurry.find_optimal(self.veggie_only, self.meat_only)
+            self.optimal_sequence = KitchenOS.find_optimal(self.veggie_only, self.meat_only)
 
-    @staticmethod
-    def get_meat_only(pref, n_curries):
+    def get_meat_only(self, pref, n_curries):
         """
         :param pref: list
         :param n_curries: integer
@@ -21,8 +22,17 @@ class OptimalCurry:
         meat_ids = []  # will store the identifiers of meat only curry types
         for p in pref:
             numbers, letters = extract_num_let(p, n_curries)
+            if not self.is_meat_asked:
+                if "M" in letters:
+                    self.is_meat_asked = True
+            if not self.is_veggie_asked:
+                if "V" in letters:
+                    self.is_veggie_asked = True
             if "V" not in letters:
                 meat_ids += numbers
+        if self.is_meat_asked and self.is_veggie_asked and int(n_curries) < 2:
+            print("no solution exists")
+            quit()
         return list(set(meat_ids))  # set is used to return unique identifiers
 
     @staticmethod
@@ -63,7 +73,7 @@ class OptimalCurry:
         :param meat_ids: list of identifiers for the curry types that will have to be M (meat) taste
         :return: either a tuple of veggie-meat identifiers or the function itself
         """
-        meat_ids += OptimalCurry.get_meat_only(p, self.n_curries)  # as the parser keeps parsing, new identifiers get added
+        meat_ids += self.get_meat_only(p, self.n_curries)  # as the parser keeps parsing, new identifiers get added
         parsed = self.update_pref(p, meat_ids)
         if parsed == p:  # BASE CASE: no more possibilities for meat curry types
             veggie_ids = self.get_veggie_only(parsed)  # the remaining ones can all be made veggie
@@ -90,7 +100,7 @@ class OptimalCurry:
 
 
 if __name__ == '__main__':
-    f = open("files/input3", "r")  # change input file here!
-    optimal_curry = OptimalCurry(f)
+    f = open("files/input5", "r")  # change input file here!
+    optimal_curry = KitchenOS(f)
     print(optimal_curry.optimal_sequence)
     f.close()

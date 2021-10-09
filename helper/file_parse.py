@@ -7,6 +7,10 @@ def get_lines(content):
 
 
 def file_check(lines):
+    """
+    :param lines: list
+    :return: string
+    """
     if not lines[0].isdigit():
         raise ValueError("first line should be an integer (number of curry types)")
     for i in range(1, len(lines)):
@@ -37,6 +41,11 @@ def extract_num_let(pref, n_curries=""):
 
 
 def check_availability(preferred_curries, n_curries):
+    """
+    :param preferred_curries: list
+    :param n_curries: string
+    :return: None
+    """
     for n in preferred_curries:
         if int(n) > int(n_curries) or int(n) < 1:
             raise TypeError(f"error: curry type {n} is not available")
