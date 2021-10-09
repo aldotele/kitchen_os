@@ -1,4 +1,4 @@
-##The Curry Wholesaler problem
+## The Curry Wholesaler problem
 You run a Curry Wholesaler, and there are a few different types of Curry you can
 prepare for take-away customers. Each Curry can be either "vegetarian" or "meat".\
 You have a number of customers, and each have some Curries that they like, either
@@ -22,18 +22,21 @@ Curry 1 with Meat, Curry 3 as Veggie and Curry 5 as Veggie .\
 Your program should read an input file like this, and print out either that it is
 impossible to satisfy all the customers, or describe, for each of the Curries, whether
 it should be made Vegetarian or Meat.\
+
 The output for the above file should be:\
-V V V V M\
+V V V V M
+
 ...because all customers can be made happy by every Curry being prepared as
 Veggie except number 5.\
+
 An example of a file with no solution is:\
 1\
 1 V\
 1 M
 Your program should print:\
 `No solution exists`
+
 A slightly richer example is:\
-A slightly richer example is:
 5\
 2 M\
 5 V\
