@@ -59,7 +59,8 @@ A slightly richer example is:\
 One more example. The input:\
 2\
 1 V 2 M\
-1 M\
+1 M
+
 ...should produce\
 `M M`
 
