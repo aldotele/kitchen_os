@@ -22,6 +22,8 @@ You make as few Meat Curries as possible (because they are more expensive).\
 Your program should accept an input file as a command line argument, and print a
 result to standard out. 
 
+***
+
 An example input file is:\
 5\
 1 M 3 V 5 V\

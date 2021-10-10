@@ -1,7 +1,7 @@
 import re
 import pprint
 
-f = open("files/input3", "r")
+f = open("../files/input3", "r")
 lines = [line.strip() for line in f.readlines()]
 # print(lines)
 
