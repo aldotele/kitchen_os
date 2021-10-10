@@ -41,6 +41,8 @@ The output for the above file should be:\
 ...because all customers can be made happy by every Curry being prepared as
 Veggie except number 5.\
 
+***
+
 An example of a file with no solution is:\
 1\
 1 V\
@@ -48,6 +50,8 @@ An example of a file with no solution is:\
 
 Your program should print:\
 `No solution exists`
+
+***
 
 A slightly richer example is:\
 5\
@@ -69,6 +73,8 @@ A slightly richer example is:\
 ...which should print:\
 `V M V M V`
 
+***
+
 One more example. The input:\
 2\
 1 V 2 M\
@@ -76,5 +82,3 @@ One more example. The input:\
 
 ...should produce\
 `M M`
-
-
