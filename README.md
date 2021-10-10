@@ -5,9 +5,7 @@ The program relies on incoming *.txt* files in order to run.\
 From CLI, type:\
 `python main.py`\
 the program will start by asking a filename as an input.\
-Choose one of the files inside the *files* directory.\
-An example of valid input is:\
-`input1`
+Enter the name of one of the files inside the *files* directory, for example *input1*.
 
 ### How it works
 You run a Curry Wholesaler, and there are a few different types of Curry you can
@@ -84,3 +82,7 @@ One more example. The input:\
 
 ...should produce\
 `M M`
+
+### Run the test suite
+From CLI, type:\
+`python test_suite.py`

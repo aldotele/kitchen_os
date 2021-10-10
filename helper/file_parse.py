@@ -16,10 +16,10 @@ def file_check(lines):
     for i in range(1, len(lines)):
         if not lines[i]:
             raise ValueError("file not valid, please remove all empty lines")
-        num, lett = extract_num_let(lines[i])
-        if not num or not lett:
+        num, let = extract_num_let(lines[i])
+        if not num or not let:
             raise ValueError(f"error with client {i}, no preference found")
-        if len(num) != len(lett):
+        if len(num) != len(let):
             raise ValueError(f"error with client {i}, each curry type need a preference between M and V")
         if "M" not in lines[i] and "V" not in lines[i]:
             raise ValueError(f"error with client {i}, at least one preference between Meat and Veggie should be present")
@@ -35,7 +35,7 @@ def extract_num_let(pref, n_curries=""):
     numbers, letters = re.findall(r'\d+', pref), re.findall(r'[a-zA-z]+', pref)
     try:
         check_availability(numbers, n_curries)
-    except ValueError:
+    except ValueError:  # raised when n_curries is not provided
         pass
     return numbers, letters
 
