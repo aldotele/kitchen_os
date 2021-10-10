@@ -1,4 +1,15 @@
 ## The Curry Wholesaler problem
+
+#### How to launch
+The program relies on incoming *.txt* files in order to run.\
+From CLI, type:
+`python main.py`\
+the program will start by asking a filename as an input.\
+Choose one of the files inside the *files* directory.
+An example of valid input is:\
+`input1`
+
+#### How it works
 You run a Curry Wholesaler, and there are a few different types of Curry you can
 prepare for take-away customers. Each Curry can be either "vegetarian" or "meat".\
 You have a number of customers, and each have some Curries that they like, either
