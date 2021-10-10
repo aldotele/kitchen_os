@@ -257,4 +257,4 @@ cython_debug/
 .ionide
 
 # local computations
-local_code/
+local_trials/
